@@ -2,9 +2,9 @@
   "expo": {
     "name": "Dicionario-Dos-Nomes",
     "slug": "Dicionario-Dos-Nomes",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/images/adaptive-icon.png",
+    "icon": "./assets/images/adaptive-icon-bg.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,8 +13,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/adaptive-icon-bg.png",
+        "backgroundColor": "#6c6c6b"
       }
     },
     "web": {
@@ -26,11 +26,10 @@
       "expo-router",
       [
         "expo-splash-screen",
-        {
-          "image": "./assets/images/adaptive-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#141414"
+         {
+          "image": "./assets/images/adaptive-icon-bg.png",
+          "resizeMode": "cover",
+          "backgroundColor": "#6c6c6b"
         }
       ]
     ],
