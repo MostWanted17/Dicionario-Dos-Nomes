@@ -1,31 +1,30 @@
-import React, { useState, useRef } from 'react';
-import { View, StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import React, { useState, useRef, useMemo } from 'react';
+import { View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import { Text, Card, SearchBar } from 'react-native-elements';
-import namesData from '../../database/nomes.json';  // Ou o caminho correto para o seu arquivo JSON
+import namesData from '../../database/nomes_femininos_todas_paginas_ordenados.json';
 
 function MasculinoScreen() {
   const [search, setSearch] = useState('');
-  const [data, setData] = useState(namesData);
   const flatListRef = useRef(null);
 
   const updateSearch = (searchText) => {
     setSearch(searchText);
-    filterData(searchText);
   };
 
-  const filterData = (searchText) => {
-    if (searchText.trim() === '') {
-      setData(namesData);
-    } else {
-      const filteredData = namesData.filter(item =>
-        item.nome.toLowerCase().includes(searchText.toLowerCase())
-      );
-      setData(filteredData);
+  // UseMemo para filtrar os dados com base na pesquisa
+  const filteredData = useMemo(() => {
+    if (search.trim() === '') {
+      return namesData;
     }
-  };
+    return namesData.filter(item =>
+      item.nome.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search]);
 
+  // Criar uma lista de letras para o índice rápido
   const alphabet = Array.from(Array(26), (_, i) => String.fromCharCode(i + 65));
 
+  // Função para renderizar o cartão de cada item
   const renderCard = ({ item }) => (
     <Card>
       <Card.Title>{item.nome}</Card.Title>
@@ -35,18 +34,64 @@ function MasculinoScreen() {
     </Card>
   );
 
+  // Função para renderizar as letras do alfabeto
   const renderLetter = ({ item }) => (
-    <Text style={styles.letter} onPress={() => scrollToCard(item)}>
-      {item}
-    </Text>
+    <TouchableOpacity onPress={() => scrollToCard(item)}>
+      <Text style={styles.letter}>{item}</Text>
+    </TouchableOpacity>
   );
 
+  // Função para scroll para o nome que começa com a letra
+  // Função para scroll para o nome que começa com a letra
   const scrollToCard = (letter) => {
-    const index = data.findIndex((card) => card.nome[0] === letter);
-    if (index !== -1) {
-      flatListRef.current.scrollToIndex({ index });
+    // Encontrar o índice do primeiro nome que começa com a letra
+    const index = filteredData.findIndex((card) => {
+      console.log('Verificando o card:', card.nome);
+      console.log('Iniciando com a letra:', letter);
+      return card.nome.trim().toUpperCase().startsWith(letter);
+    });
+
+    // Exibir o índice encontrado
+    console.log('Índice encontrado:', index);
+
+    if (index !== -1 && flatListRef.current) {
+      try {
+        flatListRef.current.scrollToIndex({
+          index,
+          animated: true,
+          viewPosition: 0, // Altere para 0 para garantir que o item vá para o topo
+        });
+      } catch (error) {
+        console.warn('Erro ao tentar rolar para o índice:', error);
+      }
+    } else {
+      console.warn(`Letra ${letter} não encontrada`);
     }
   };
+
+
+
+  const getItemLayout = (_, index) => {
+    // Use a altura média estimada para cada item
+    const ITEM_HEIGHT = 160; // Defina a altura média estimada dos itens
+    const offset = ITEM_HEIGHT * index;
+    return { length: ITEM_HEIGHT, offset: offset, index };
+  };
+
+
+  const onScrollToIndexFailed = (error) => {
+    const { index, averageItemLength } = error;
+    console.log('Erro ao tentar rolar para o índice:', error);
+
+    // Se o índice for maior que o número de itens renderizados, tente rolar para o último item
+    if (flatListRef.current) {
+      flatListRef.current.scrollToOffset({
+        offset: averageItemLength * index,
+        animated: true,
+      });
+    }
+  };
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -61,10 +106,12 @@ function MasculinoScreen() {
       />
       <FlatList
         ref={flatListRef}
-        data={data}
+        data={filteredData}
         renderItem={renderCard}
         keyExtractor={(item, index) => index.toString()}
         style={styles.cardList}
+        getItemLayout={getItemLayout}
+        onScrollToIndexFailed={onScrollToIndexFailed}
       />
       <FlatList
         data={alphabet}
@@ -72,13 +119,13 @@ function MasculinoScreen() {
         keyExtractor={(item) => item}
         style={styles.alphabetList}
         contentContainerStyle={styles.alphabetContainer}
+        scrollEnabled={false}
       />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  // Estilos da tela MasculinoScreen
   container: { flex: 1, backgroundColor: '#6c6c6b' },
   searchBar: { marginTop: 30, marginBottom: 10, backgroundColor: 'transparent', borderBottomWidth: 0 },
   inputContainer: { backgroundColor: '#1f1f1e', borderRadius: 25 },
@@ -90,4 +137,4 @@ const styles = StyleSheet.create({
   letter: { color: '#fff', fontSize: 16, marginVertical: 2, textAlign: 'center', color: '#1f1f1e' }
 });
 
-export default MasculinoScreen;
+export default FemeninoScreen;

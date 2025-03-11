@@ -2,7 +2,7 @@
   "expo": {
     "name": "Dicionario-Dos-Nomes",
     "slug": "Dicionario-Dos-Nomes",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/adaptive-icon-bg.png",
     "scheme": "myapp",
