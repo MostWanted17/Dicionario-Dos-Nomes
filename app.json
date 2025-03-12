@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Dicionario-Dos-Nomes",
+    "name": "Dicionario Dos Nomes",
     "slug": "Dicionario-Dos-Nomes",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/adaptive-icon-bg.png",
     "scheme": "myapp",
@@ -15,7 +15,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon-bg.png",
         "backgroundColor": "#6c6c6b"
-      }
+      },
+      "package": "com.davidmaranho.DicionarioDosNomes",
+      "permissions": ["com.google.android.gms.permission.AD_ID"],
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro",

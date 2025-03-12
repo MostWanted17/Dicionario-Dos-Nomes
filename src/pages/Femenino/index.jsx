@@ -1,9 +1,9 @@
 import React, { useState, useRef, useMemo } from 'react';
-import { View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
-import { Text, Card, SearchBar } from 'react-native-elements';
+import { Text, View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { Card, SearchBar } from 'react-native-elements';
 import namesData from '../../database/nomes_femininos_todas_paginas_ordenados.json';
 
-function MasculinoScreen() {
+function FemeninoScreen() {
   const [search, setSearch] = useState('');
   const flatListRef = useRef(null);
 
@@ -27,11 +27,13 @@ function MasculinoScreen() {
   // Função para renderizar o cartão de cada item
   const renderCard = ({ item }) => (
     <Card>
-      <Card.Title>{item.nome}</Card.Title>
-      <Card.Divider />
-      <Text style={styles.text}>Significado: {item.significado}</Text>
-      <Text style={styles.text}>Origem: {item.origens.join(', ')}</Text>
-    </Card>
+  <Text style={styles.cardTitle}>{item.nome}</Text>
+  <Card.Divider />
+  <Text style={styles.text}>Significado: {item.significado}</Text>
+  <Text style={styles.text}>Origem: {item.origens.join(', ')}</Text>
+</Card>
+
+
   );
 
   // Função para renderizar as letras do alfabeto
@@ -73,7 +75,7 @@ function MasculinoScreen() {
 
   const getItemLayout = (_, index) => {
     // Use a altura média estimada para cada item
-    const ITEM_HEIGHT = 160; // Defina a altura média estimada dos itens
+    const ITEM_HEIGHT = 145; // Defina a altura média estimada dos itens
     const offset = ITEM_HEIGHT * index;
     return { length: ITEM_HEIGHT, offset: offset, index };
   };
@@ -97,6 +99,7 @@ function MasculinoScreen() {
     <SafeAreaView style={styles.container}>
       <SearchBar
         placeholder="Buscar..."
+        placeholderTextColor="#ccc" // Adicionando esta linha
         onChangeText={updateSearch}
         value={search}
         containerStyle={styles.searchBar}
@@ -134,7 +137,7 @@ const styles = StyleSheet.create({
   cardList: { flex: 1, width: '90%', alignSelf: 'center' },
   alphabetList: { position: 'absolute', right: 0, top: 80, bottom: 30, width: 30, paddingTop: 30, paddingBottom: 30 },
   alphabetContainer: { alignItems: 'center', justifyContent: 'flex-start' },
-  letter: { color: '#fff', fontSize: 16, marginVertical: 2, textAlign: 'center', color: '#1f1f1e' }
+  letter: { color: '#fff', fontSize: 16, marginVertical: 2, textAlign: 'center' }
 });
 
 export default FemeninoScreen;
