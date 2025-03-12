@@ -1,7 +1,7 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import { Card, SearchBar } from 'react-native-elements';
-import namesData from '../../database/nomes_femininos_todas_paginas_ordenados.json';
+import namesData from '../../database/nomes_masculinos_todas_paginas_ordenados.json';
 
 function MasculinoScreen() {
   const [search, setSearch] = useState('');
