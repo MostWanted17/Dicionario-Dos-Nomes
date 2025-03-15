@@ -190,7 +190,7 @@ def coletar_top_nomes_por_letra():
 nomes_gerais = carregar_progresso()
 nomes_existentes = {d["nome"] for d in nomes_gerais}
 
-for pagina in range(75, 205):  # Ajuste o range conforme necessário
+for pagina in range(205, 205):  # Ajuste o range conforme necessário
     print(f"\nProcessando página: {pagina}")
     url_base = f"https://www.dicionariodenomesproprios.com.br/nomes-masculinos/{pagina}/"
     soup = obter_soup(url_base)
