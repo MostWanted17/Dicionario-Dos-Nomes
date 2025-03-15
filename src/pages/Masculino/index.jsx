@@ -21,47 +21,43 @@ function MasculinoScreen() {
     );
   }, [search]);
 
-  // Criar uma lista de letras para o índice rápido
+  // Sempre que os dados filtrados mudam, rola para o topo
+  React.useEffect(() => {
+    if (filteredData.length > 0 && flatListRef.current) {
+      flatListRef.current.scrollToIndex({
+        index: 0,
+        animated: true,
+        viewPosition: 0,
+      });
+    }
+  }, [filteredData]);
+
   const alphabet = Array.from(Array(26), (_, i) => String.fromCharCode(i + 65));
 
-  // Função para renderizar o cartão de cada item
   const renderCard = ({ item }) => (
     <Card>
-    <Text style={styles.cardTitle}>{item.nome}</Text>
-    <Card.Divider />
-    <Text style={styles.text}>Significado: {item.significado}</Text>
-    <Text style={styles.text}>Origem: {item.origens.join(', ')}</Text>
-  </Card>
-  
-
+      <Text style={styles.cardTitle}>{item.nome}</Text>
+      <Card.Divider />
+      <Text style={styles.text}>Significado: {item.significado}</Text>
+      <Text style={styles.text}>Origem: {item.origens.join(', ')}</Text>
+    </Card>
   );
 
-  // Função para renderizar as letras do alfabeto
   const renderLetter = ({ item }) => (
     <TouchableOpacity onPress={() => scrollToCard(item)}>
       <Text style={styles.letter}>{item}</Text>
     </TouchableOpacity>
   );
 
-  // Função para scroll para o nome que começa com a letra
-  // Função para scroll para o nome que começa com a letra
   const scrollToCard = (letter) => {
-    // Encontrar o índice do primeiro nome que começa com a letra
-    const index = filteredData.findIndex((card) => {
-      console.log('Verificando o card:', card.nome);
-      console.log('Iniciando com a letra:', letter);
-      return card.nome.trim().toUpperCase().startsWith(letter);
-    });
-
-    // Exibir o índice encontrado
-    console.log('Índice encontrado:', index);
+    const index = filteredData.findIndex((card) => card.nome.trim().toUpperCase().startsWith(letter));
 
     if (index !== -1 && flatListRef.current) {
       try {
         flatListRef.current.scrollToIndex({
           index,
           animated: true,
-          viewPosition: 0, // Altere para 0 para garantir que o item vá para o topo
+          viewPosition: 0,
         });
       } catch (error) {
         console.warn('Erro ao tentar rolar para o índice:', error);
@@ -71,21 +67,13 @@ function MasculinoScreen() {
     }
   };
 
-
-
   const getItemLayout = (_, index) => {
-    // Use a altura média estimada para cada item
-    const ITEM_HEIGHT = 160; // Defina a altura média estimada dos itens
-    const offset = ITEM_HEIGHT * index;
-    return { length: ITEM_HEIGHT, offset: offset, index };
+    const ITEM_HEIGHT = 145;
+    return { length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index };
   };
-
 
   const onScrollToIndexFailed = (error) => {
     const { index, averageItemLength } = error;
-    console.log('Erro ao tentar rolar para o índice:', error);
-
-    // Se o índice for maior que o número de itens renderizados, tente rolar para o último item
     if (flatListRef.current) {
       flatListRef.current.scrollToOffset({
         offset: averageItemLength * index,
@@ -94,24 +82,25 @@ function MasculinoScreen() {
     }
   };
 
-
   return (
     <SafeAreaView style={styles.container}>
       <SearchBar
         placeholder="Buscar..."
-        placeholderTextColor="#ccc" // Adicionando esta linha
+        placeholderTextColor="#ccc"
         onChangeText={updateSearch}
         value={search}
         containerStyle={styles.searchBar}
         inputContainerStyle={styles.inputContainer}
         inputStyle={styles.inputStyle}
         lightTheme
+        // Adicione um ID único, sem "key"
+        autoCapitalize="none"
       />
       <FlatList
         ref={flatListRef}
         data={filteredData}
         renderItem={renderCard}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(item, index) => item.nome + index}
         style={styles.cardList}
         getItemLayout={getItemLayout}
         onScrollToIndexFailed={onScrollToIndexFailed}

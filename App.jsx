@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 // Importando os dados do arquivo JSON
-import namesData from './src/database/nomes.json';
 import AboutScreen from './src/pages/Sobre/index.jsx';
 import MasculinoScreen from './src/pages/Masculino/index.jsx'; // Importando o MasculinoScreen
 import FemininoScreen from './src/pages/Femenino/index.jsx';  // Você pode criar o FemininoScreen de maneira similar

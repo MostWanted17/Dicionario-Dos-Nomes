@@ -5,10 +5,17 @@ import Constants from 'expo-constants';  // Importando expo-constants
 
 // Supondo que a imagem esteja na pasta 'assets'
 import LogoImage from '../../../assets/images/adaptive-icon-bg.png';  // Substitua pelo caminho da sua imagem
+import namesDataF from '../../database/nomes_femininos_todas_paginas_ordenados.json';
+import namesDataM from '../../database/nomes_masculinos_todas_paginas_ordenados.json';
 
 export default function AboutScreen() {
   const appName = Constants.expoConfig.name;
   const appVersion = Constants.expoConfig.version;
+  
+  // Contagem de nomes
+  const totalNomesFemininos = namesDataF.length;
+  const totalNomesMasculinos = namesDataM.length;
+
   return (
     <View style={styles.container}>
       {/* Ícone do Aplicativo */}
@@ -18,6 +25,10 @@ export default function AboutScreen() {
       <Text style={styles.text}>
         Este aplicativo permite a busca de nomes e seus significados.
       </Text>
+
+      {/* Exibição das quantidades de nomes */}
+      <Text style={styles.stats}>📌 Nomes Femininos: {totalNomesFemininos}</Text>
+      <Text style={styles.stats}>📌 Nomes Masculinos: {totalNomesMasculinos}</Text>
 
       {/* Versão do aplicativo */}
       <Text style={styles.version}>{appName}</Text>
@@ -46,7 +57,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   appIcon: {
-    width: 100, // Ajuste conforme o tamanho do ícone
+    width: 100,
     height: 100,
     marginBottom: 20,
   },
@@ -56,6 +67,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 10,
   },
+  stats: {
+    fontSize: 16,
+    color: '#ffd700', // Dourado para destaque
+    marginBottom: 5,
+  },
   version: {
     fontSize: 14,
     color: '#ccc',
@@ -63,6 +79,7 @@ const styles = StyleSheet.create({
   },
   socialContainer: {
     flexDirection: 'row',
-    gap: 20, // Espaço entre os ícones
+    gap: 20,
   },
 });
+
