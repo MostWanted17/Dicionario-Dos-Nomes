@@ -1,22 +1,44 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { AppOpenAd, TestIds, AdEventType } from 'react-native-google-mobile-ads';
 
-
-// Importando os dados do arquivo JSON
+// Importando as telas
 import AboutScreen from './src/pages/Sobre/index.jsx';
-import MasculinoScreen from './src/pages/Masculino/index.jsx'; // Importando o MasculinoScreen
-import FemininoScreen from './src/pages/Femenino/index.jsx';  // Você pode criar o FemininoScreen de maneira similar
+import MasculinoScreen from './src/pages/Masculino/index.jsx';
+import FemininoScreen from './src/pages/Femenino/index.jsx';
+
+const adUnitId = __DEV__ ? TestIds.APP_OPEN : 'ca-app-pub-5781907132925477/9911463270'; // Teste e Produção
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  useEffect(() => {
+    const appOpenAd = AppOpenAd.createForAdRequest(adUnitId, {
+      requestNonPersonalizedAdsOnly: true,
+    });
+
+    const loadAd = () => {
+      appOpenAd.load();
+      appOpenAd.addAdEventListener(AdEventType.LOADED, () => {
+        console.log('Ad carregado!');
+        appOpenAd.show(); // Exibe o anúncio ao abrir o app
+      });
+    };
+
+    loadAd(); // Carrega e exibe o anúncio ao abrir o app
+
+    return () => {
+      appOpenAd.removeAllListeners(); // Remove os eventos ao desmontar o app
+    };
+  }, []);
+
   return (
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-          headerShown: false, // Esconde o título do topo
+          headerShown: false,
           tabBarIcon: ({ color, size }) => {
             let iconName;
             if (route.name === 'Masculino') iconName = 'male';

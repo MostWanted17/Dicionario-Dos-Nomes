@@ -2,7 +2,7 @@
   "expo": {
     "name": "Dicionario Dos Nomes",
     "slug": "dicionario-dos-nomes",
-    "version": "1.0.5",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/adaptive-icon-bg.png",
     "scheme": "myapp",
@@ -36,6 +36,12 @@
           "resizeMode": "cover",
           "backgroundColor": "#6c6c6b"
         }
+      ],
+      [
+      "react-native-google-mobile-ads",
+      {
+        "android_app_id": "ca-app-pub-5781907132925477~5189619634"
+      }
       ]
     ],
     "experiments": {

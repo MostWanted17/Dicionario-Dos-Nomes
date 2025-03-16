@@ -1,7 +1,7 @@
 {
   "name": "dicionario-dos-nomes",
   "main": "index.jsx",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
