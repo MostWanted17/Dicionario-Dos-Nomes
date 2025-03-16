@@ -14,7 +14,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#6c6c6b"
+        "backgroundColor": "#2C1E5C"
       },
       "package": "com.davidmaranho.DicionarioDosNomes",
       "permissions": [
@@ -35,7 +35,7 @@
           "image": "./assets/images/adaptive-icon-bg.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#6c6c6b"
+          "backgroundColor": "#2C1E5C"
         }
       ],
       [
