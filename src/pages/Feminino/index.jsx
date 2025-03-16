@@ -4,9 +4,9 @@ import {
 } from 'react-native';
 import { Card, SearchBar } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
-import namesData from '../../database/nomes_masculinos_todas_paginas_ordenados.json';
+import namesData from '../../database/nomes_femininos_todas_paginas_ordenados.json';
 
-function MasculinoScreen() {
+function FemininoScreen() {
   const [search, setSearch] = useState('');
   const [viewMode, setViewMode] = useState('card'); // 'card' ou 'list'
   const [scrollY, setScrollY] = useState(0); // Estado para armazenar a posição do scroll
@@ -237,4 +237,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MasculinoScreen;
+export default FemininoScreen;
