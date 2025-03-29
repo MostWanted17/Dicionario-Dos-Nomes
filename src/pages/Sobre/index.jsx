@@ -36,11 +36,11 @@ export default function AboutScreen() {
 
       {/* Ícones de LinkedIn e GitHub */}
       <View style={styles.socialContainer}>
-        <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/seu-perfil')}>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/david-m-690521129/')}>
           <FontAwesome name="linkedin-square" size={40} color="#F5A9F7" />
         </TouchableOpacity>
         
-        <TouchableOpacity onPress={() => Linking.openURL('https://github.com/seu-usuario')}>
+        <TouchableOpacity onPress={() => Linking.openURL('https://github.com/MostWanted17')}>
           <FontAwesome name="github" size={40} color="#F5A9F7" />
         </TouchableOpacity>
       </View>

@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet, SafeAreaView, Alert, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
+import { pedido } from '../../api/sendPedido';
 
 const PedidosScreen = () => {
   const [nome, setNome] = useState('');
   const [mensagem, setMensagem] = useState('');
 
-  const handlePedido = () => {
+  const handlePedido = async () => {
     if (nome) {
-      setMensagem(`Pedido de nome "${nome}" enviado com sucesso!`);
+      const response = await pedido(nome);
+      
+      setMensagem(response.message);
     } else {
       setMensagem('Por favor, insira um nome.');
     }
