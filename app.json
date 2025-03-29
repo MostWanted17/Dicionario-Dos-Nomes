@@ -3,7 +3,7 @@
     "name": "Dicionario Dos Nomes",
     "slug": "dicionario-dos-nomes",
     "version": "1.2.2",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/images/adaptive-icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
@@ -22,7 +22,7 @@
         "com.google.android.gms.permission.AD_ID"
       ],
       "versionCode": 2,
-      "minSdkVersion": 26
+      "minSdkVersion": 26 
     },
     "web": {
       "bundler": "metro",
