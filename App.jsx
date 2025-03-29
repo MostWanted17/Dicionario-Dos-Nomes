@@ -20,19 +20,28 @@ export default function App() {
     const appOpenAd = AppOpenAd.createForAdRequest(adUnitId, {
       requestNonPersonalizedAdsOnly: true,
     });
-
+  
     const loadAd = () => {
       appOpenAd.load();
+  
       appOpenAd.addAdEventListener(AdEventType.LOADED, () => {
         console.log('Ad carregado!');
-        appOpenAd.show(); // Exibe o anúncio ao abrir o app
+        try {
+          appOpenAd.show();
+        } catch (error) {
+          console.error('Erro ao exibir anúncio:', error);
+        }
+      });
+  
+      appOpenAd.addAdEventListener(AdEventType.ERROR, (error) => {
+        console.error('Erro ao carregar anúncio:', error);
       });
     };
-
-    loadAd(); // Carrega e exibe o anúncio ao abrir o app
-
+  
+    loadAd();
+  
     return () => {
-      appOpenAd.removeAllListeners(); // Remove os eventos ao desmontar o app
+      appOpenAd.removeAllListeners();
     };
   }, []);
 

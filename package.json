@@ -1,12 +1,14 @@
 {
   "name": "dicionario-dos-nomes",
   "main": "index.jsx",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "scripts": {
     "start": "expo start",
+    "minify": "expo start --minify --no-dev",
+    "build": "expo prebuild",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint"
