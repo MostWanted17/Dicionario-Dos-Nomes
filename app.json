@@ -2,7 +2,7 @@
   "expo": {
     "name": "Dicionario Dos Nomes",
     "slug": "dicionario-dos-nomes",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "orientation": "default",
     "icon": "./assets/images/adaptive-icon.png",
     "scheme": "myapp",
@@ -21,7 +21,7 @@
         "INTERNET",
         "com.google.android.gms.permission.AD_ID"
       ],
-      "versionCode": 4,
+      "versionCode": 5,
       "minSdkVersion": 21 
     },
     "web": {
