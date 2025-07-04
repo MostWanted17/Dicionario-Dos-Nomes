@@ -23,7 +23,7 @@
         "INTERNET",
         "com.google.android.gms.permission.AD_ID"
       ],
-      "versionCode": 5
+      "versionCode": 6
     },
     "web": {
       "bundler": "metro",
