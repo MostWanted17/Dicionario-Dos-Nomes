@@ -2,7 +2,7 @@
   "expo": {
     "name": "Dicionario Dos Nomes",
     "slug": "dicionario-dos-nomes",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "orientation": "default",
     "icon": "./assets/images/adaptive-icon.png",
     "scheme": "myapp",
@@ -12,6 +12,8 @@
       "supportsTablet": true
     },
     "android": {
+      "targetSdkVersion": 35,
+      "compileSdkVersion": 35,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#2C1E5C"
@@ -21,8 +23,7 @@
         "INTERNET",
         "com.google.android.gms.permission.AD_ID"
       ],
-      "versionCode": 5,
-      "minSdkVersion": 21 
+      "versionCode": 5
     },
     "web": {
       "bundler": "metro",

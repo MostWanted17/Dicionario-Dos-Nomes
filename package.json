@@ -1,7 +1,7 @@
 {
   "name": "dicionario-dos-nomes",
   "main": "index.jsx",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "scripts": {
     "start": "expo start",
     "minify": "expo start --minify --no-dev",
