@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TextInput, Button, Text, StyleSheet, SafeAreaView, Alert, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
 import { pedido } from '../../api/sendPedido';
+import { useTranslation } from 'react-i18next';
+import styles from './style';
 
 const PedidosScreen = () => {
+  const { t, i18n } = useTranslation();
   const [nome, setNome] = useState('');
   const [mensagem, setMensagem] = useState('');
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+      if (i18n.isInitialized) {
+        setIsReady(true);
+      } else {
+        i18n.on('initialized', () => setIsReady(true));
+      }
+    }, []);
 
   const handlePedido = async () => {
     if (nome) {
@@ -25,20 +37,20 @@ const PedidosScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.toggleContainer}>
-        <Text style={styles.toggleText}>Pedido de Nomes</Text>
+        <Text style={styles.toggleText}>{t('PedidodeNomes')}</Text>
       </View>
 
       <Card containerStyle={styles.cardStyle}>
-        <Text style={styles.cardTitle}>Faça um Pedido de Nome</Text>
+        <Text style={styles.cardTitle}>{t('FacaumPedidodeNome')}</Text>
         <Card.Divider />
         <TextInput
           style={styles.input}
-          placeholder="Digite o nome desejado"
+          placeholder={t('Digiteonomedesejado')}
           placeholderTextColor="#ddd"
           value={nome}
           onChangeText={setNome}
         />
-        <Button title="Enviar Pedido" onPress={handlePedido} color="#F5A9F7" />
+        <Button title={t('EnviarPedido')} onPress={handlePedido} color="#F5A9F7" />
         {mensagem && (
           <Text style={styles.message}>{mensagem}</Text>
         )}
@@ -52,53 +64,5 @@ const PedidosScreen = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#2C1E5C', alignItems: 'center', justifyContent: 'center' },
-  toggleContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 10,
-  },
-  toggleText: { color: '#fff', fontSize: 18, marginBottom: 20 },
-  cardStyle: {
-    width: '90%',
-    backgroundColor: '#6A35A1',
-    borderColor: '#9F5AFF',
-    borderWidth: 1,
-    borderRadius: 15,
-    overflow: 'hidden',
-    padding: 20,
-  },
-  cardTitle: { fontSize: 18, fontWeight: 'bold', color: '#FFFFFF', textAlign: 'center' },
-  input: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    marginBottom: 20,
-    paddingHorizontal: 10,
-    borderRadius: 5,
-    color: '#fff',
-  },
-  message: {
-    marginTop: 10,
-    color: '#F5A9F7',
-    fontSize: 16,
-    textAlign: 'center',
-  },
-  fab: {
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-    backgroundColor: '#F5A9F7',
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    justifyContent: 'center',
-    alignItems: 'center',
-    elevation: 5,
-  },
-});
 
 export default PedidosScreen;

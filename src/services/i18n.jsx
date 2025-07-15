@@ -19,7 +19,16 @@ const resources = {
       ModoLista: 'List Mode',
       ModoCard: 'Card Mode',
       Buscar: 'Search',
-      NenhumNomeEncontrado: 'No names found'
+      NenhumNomeEncontrado: 'No names found',
+      PedidodeNomes: 'Request for Names',
+      FacaumPedidodeNome: 'Make a Name Request',
+      Digiteonomedesejado: 'Enter the desired name',
+      EnviarPedido: 'Submit Request',
+      Esteaplicativopermiteabuscadenomeseseussignificados: 'This application allows you to search for names and their meanings.',
+      NomesFemininos: 'Female Names:',
+      NomesMasculinos: 'Male Names:',
+      Versao: "Version:",
+      AppName: "Dictionary of Names"
     }
   },
   pt: {
@@ -37,7 +46,16 @@ const resources = {
       ModoLista: 'Modo Lista',
       ModoCard: 'Modo Card',
       Buscar: 'Buscar',
-      NenhumNomeEncontrado: 'Nenhum nome encontrado'
+      NenhumNomeEncontrado: 'Nenhum nome encontrado',
+      PedidodeNomes: 'Pedido de Nomes',
+      FaçaumPedidodeNome: 'Faça um Pedido de Nome',
+      Digiteonomedesejado: 'Digite o nome desejado',
+      EnviarPedido: 'Enviar Pedido',
+      Esteaplicativopermiteabuscadenomeseseussignificados:'Este aplicativo permite a busca de nomes e seus significados.',
+      NomesFemininos: 'Nomes Femininos:',
+      NomesMasculinos: 'Nomes Masculinos:',
+      Versao: 'Versão:',
+      AppName: "Dicionario dos Nomes"
     }
   }
 };
