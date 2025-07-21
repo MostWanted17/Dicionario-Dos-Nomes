@@ -1,0 +1,811 @@
+[
+  {
+    "nome": "Aaron",
+    "significados": {
+      "pt": "Significa “exaltado”, “elevado”, “força”, “montanha da força”, “mensageiro”.",
+      "en": "It means “exalted”, “elevated”, “strength”, “mountain of strength”, “messenger”.",
+      "fr": "Cela signifie « exalté », « élevé », « force », « montagne de force », « messager »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica",
+        "Francesa",
+        "Inglesa",
+        "Alemã"
+      ],
+      "en": [
+        "Hebrew",
+        "French",
+        "English",
+        "Republic"
+      ],
+      "fr": [
+        "Hébreu",
+        "Française",
+        "Anglaise",
+        "Deutsch"
+      ]
+    }
+  },
+  {
+    "nome": "Abdul",
+    "significados": {
+      "pt": "Significa \"servo do\" ou \"servo dos\".",
+      "en": "It means \"servant of\" or \"servant of\".",
+      "fr": "Il signifie « serviteur de » ou « serviteur de »."
+    },
+    "origens": {
+      "pt": [
+        "Árabe"
+      ],
+      "en": [
+        "Arabic"
+      ],
+      "fr": [
+        "Arabe"
+      ]
+    }
+  },
+  {
+    "nome": "Abel",
+    "significados": {
+      "pt": "Significa “névoa”, “sopro”, “vapor”, “respiração”, “frágil”, “efêmero”, “filho”.",
+      "en": "It means “mist”, “blow”, “steam”, “breath”, “fragile”, “ephemeral”, “son”.",
+      "fr": "Cela signifie « brume », « souffle », « vapeur », « souffle », « fragile », « éphémère », « fils »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica",
+        "Bíblica"
+      ],
+      "en": [
+        "Hebrew",
+        "Bible"
+      ],
+      "fr": [
+        "Hébreu",
+        "Bible"
+      ]
+    }
+  },
+  {
+    "nome": "Abelardo",
+    "significados": {
+      "pt": "Significa “criador de abelhas”.",
+      "en": "It means “beekeeper”.",
+      "fr": "Cela signifie « apiculteur »."
+    },
+    "origens": {
+      "pt": [
+        "Francesa"
+      ],
+      "en": [
+        "French"
+      ],
+      "fr": [
+        "Française"
+      ]
+    }
+  },
+  {
+    "nome": "Abias",
+    "significados": {
+      "pt": "Significa \"meu pai é Jeová\", \"meu pai é Deus\".",
+      "en": "It means \"my father is Jehovah\", \"my father is God\".",
+      "fr": "Cela signifie « mon père est Jéhovah », « mon père est Dieu »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica",
+        "Bíblica"
+      ],
+      "en": [
+        "Hebrew",
+        "Bible"
+      ],
+      "fr": [
+        "Hébreu",
+        "Bible"
+      ]
+    }
+  },
+  {
+    "nome": "Abimael",
+    "significados": {
+      "pt": "significa \"Deus é meu pai\", \"Deus é todo poderoso\", \"meu pai é o senhor\", \"de quem Deus é pai\".",
+      "en": "means \"God is my father,\" \"God is all powerful,\" \"my father is the lord,\" \"of whom God is the father.\"",
+      "fr": "signifie « Dieu est mon père », « Dieu est tout-puissant », « mon père est le seigneur », « dont Dieu est le père »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica",
+        "Bíblica"
+      ],
+      "en": [
+        "Hebrew",
+        "Bible"
+      ],
+      "fr": [
+        "Hébreu",
+        "Bible"
+      ]
+    }
+  },
+  {
+    "nome": "Abraão",
+    "significados": {
+      "pt": "Significa \"pai de uma multidão\", \"pai de muitos\".",
+      "en": "It means \"father of a multitude,\" \"father of many.\"",
+      "fr": "Cela signifie « père d'une multitude », « père de beaucoup »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Abreu",
+    "significados": {
+      "pt": "significa \"aquele que é grato\", \"doador\", \"generoso\".",
+      "en": "means \"one who is grateful,\" \"giver,\" \"generous.\"",
+      "fr": "signifie « celui qui est reconnaissant », « celui qui donne », « celui qui est généreux »."
+    },
+    "origens": {
+      "pt": [
+        "Portuguesa"
+      ],
+      "en": [
+        "Portuguese"
+      ],
+      "fr": [
+        "Portugaise"
+      ]
+    }
+  },
+  {
+    "nome": "Abrão",
+    "significados": {
+      "pt": "Significa \"pai de uma multidão\", \"pai de muitos\".",
+      "en": "It means \"father of a multitude,\" \"father of many.\"",
+      "fr": "Cela signifie « père d'une multitude », « père de beaucoup »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica",
+        "Bíblica"
+      ],
+      "en": [
+        "Hebrew",
+        "Bible"
+      ],
+      "fr": [
+        "Hébreu",
+        "Bible"
+      ]
+    }
+  },
+  {
+    "nome": "Absalom",
+    "significados": {
+      "pt": "Significa “paz de Deus”, “meu pai é paz”.",
+      "en": "It means “peace of God,” “my father is peace.”",
+      "fr": "Cela signifie « paix de Dieu », « mon père est la paix »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Absalão",
+    "significados": {
+      "pt": "Significa “paz de Deus”, “meu pai é paz”.",
+      "en": "It means “peace of God,” “my father is peace.”",
+      "fr": "Cela signifie « paix de Dieu », « mon père est la paix »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Absirto",
+    "significados": {
+      "pt": "De grande personalidade.",
+      "en": "Of great personality.",
+      "fr": "De grande personnalité."
+    },
+    "origens": {
+      "pt": [
+        "Mitológica"
+      ],
+      "en": [
+        "Mythology"
+      ],
+      "fr": [
+        "Mythologique"
+      ]
+    }
+  },
+  {
+    "nome": "Abstêmio",
+    "significados": {
+      "pt": "Que não bebe bebida alcoólica.",
+      "en": "Who doesn't drink alcohol.",
+      "fr": "Qui ne boit pas d'alcool."
+    },
+    "origens": {
+      "pt": [
+        "Latina"
+      ],
+      "en": [
+        "Latino"
+      ],
+      "fr": [
+        "Latina"
+      ]
+    }
+  },
+  {
+    "nome": "Abud",
+    "significados": {
+      "pt": "O mesmo que abu.",
+      "en": "Same as abu.",
+      "fr": "Identique à l'UAU."
+    },
+    "origens": {
+      "pt": [
+        "Árabe"
+      ],
+      "en": [
+        "Arabic"
+      ],
+      "fr": [
+        "Arabe"
+      ]
+    }
+  },
+  {
+    "nome": "Abílio",
+    "significados": {
+      "pt": "Significa “aquele que não é vingativo” ou “criador de abelhas”.",
+      "en": "It means “one who is not vindictive” or “beekeeper.”",
+      "fr": "Cela signifie « celui qui n'est pas vindicatif » ou « apiculteur »."
+    },
+    "origens": {
+      "pt": [
+        "Latina",
+        "Francesa"
+      ],
+      "en": [
+        "Latino",
+        "French"
+      ],
+      "fr": [
+        "Latina",
+        "Française"
+      ]
+    }
+  },
+  {
+    "nome": "Abúndio",
+    "significados": {
+      "pt": "Variação de Abundâncio.",
+      "en": "Abundantius Variation.",
+      "fr": "Variation Abundantius."
+    },
+    "origens": {
+      "pt": [
+        "Latina"
+      ],
+      "en": [
+        "Latino"
+      ],
+      "fr": [
+        "Latina"
+      ]
+    }
+  },
+  {
+    "nome": "Acabe",
+    "significados": {
+      "pt": "Significado: \"Irmão do pai\" ou \"tio paterno\".",
+      "en": "Meaning: \"Father's brother\" or \"paternal uncle\".",
+      "fr": "Signification : « frère du père » ou « oncle paternel »."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Acace",
+    "significados": {
+      "pt": "Forma francesa de Acácio.",
+      "en": "French form of Acacius.",
+      "fr": "Forme française d'Acacius."
+    },
+    "origens": {
+      "pt": [
+        "Francesa"
+      ],
+      "en": [
+        "French"
+      ],
+      "fr": [
+        "Française"
+      ]
+    }
+  },
+  {
+    "nome": "Acaco",
+    "significados": {
+      "pt": "Filho de licaão.",
+      "en": "Son of Lycaon.",
+      "fr": "Fils de Lycaon."
+    },
+    "origens": {
+      "pt": [
+        "Grega"
+      ],
+      "en": [
+        "Greece"
+      ],
+      "fr": [
+        "Grèce"
+      ]
+    }
+  },
+  {
+    "nome": "Academos",
+    "significados": {
+      "pt": "Herói da ática.",
+      "en": "Hero of Attica.",
+      "fr": "Héros de l'Attique."
+    },
+    "origens": {
+      "pt": [
+        "Grega"
+      ],
+      "en": [
+        "Greece"
+      ],
+      "fr": [
+        "Grèce"
+      ]
+    }
+  },
+  {
+    "nome": "Acaiah",
+    "significados": {
+      "pt": "Anjo de guarda.",
+      "en": "Guardian angel.",
+      "fr": "Ange gardien."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Acanto",
+    "significados": {
+      "pt": "Planta com belas folhas, símbolo das belas artes.",
+      "en": "Plant with beautiful leaves, symbol of fine arts.",
+      "fr": "Plantez de belles feuilles, symbole des beaux-arts."
+    },
+    "origens": {
+      "pt": [
+        "Latina"
+      ],
+      "en": [
+        "Latino"
+      ],
+      "fr": [
+        "Latina"
+      ]
+    }
+  },
+  {
+    "nome": "Acarnane",
+    "significados": {
+      "pt": "Nome masculino do grego adamán, \"cardo-bento, cardo-santo\", nome de uma planta.",
+      "en": "Male name from the Greek adamán, \"thistle-benedict, thistle-saint\", name of a plant.",
+      "fr": "Nom masculin du grec adamán, « chardon-bénédicte, chardon-saint », nom d'une plante."
+    },
+    "origens": {
+      "pt": [
+        "Grega"
+      ],
+      "en": [
+        "Greece"
+      ],
+      "fr": [
+        "Grèce"
+      ]
+    }
+  },
+  {
+    "nome": "Acates",
+    "significados": {
+      "pt": "Nome de um rio da sicília, hoje arila.",
+      "en": "Name of a river in Sicily, today arila.",
+      "fr": "Nom d'une rivière en Sicile, aujourd'hui arila."
+    },
+    "origens": {
+      "pt": [
+        "Latina"
+      ],
+      "en": [
+        "Latino"
+      ],
+      "fr": [
+        "Latina"
+      ]
+    }
+  },
+  {
+    "nome": "Acauã",
+    "significados": {
+      "pt": "Significa “grande ave de rapina” ou \"gavião-acauã\".",
+      "en": "It means “great bird of prey” or “hawk.”",
+      "fr": "Cela signifie « grand oiseau de proie » ou « faucon »."
+    },
+    "origens": {
+      "pt": [
+        "Indígena"
+      ],
+      "en": [
+        "Indigenous"
+      ],
+      "fr": [
+        "Peuple autochtone"
+      ]
+    }
+  },
+  {
+    "nome": "Acaz",
+    "significados": {
+      "pt": "Significa \"possuidor\". Rei de Judá, filho de Joatão.",
+      "en": "It means \"possessor.\" King of Judah, son of Joatham.",
+      "fr": "Cela signifie « possesseur ». Roi de Juda, fils de Joatham."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Accioli",
+    "significados": {
+      "pt": "Derivado de acciaioli, instrumento de aço usado para produzir fogo.",
+      "en": "Derived from acciaioli, a steel instrument used to produce fire.",
+      "fr": "Dérivé de l'acciaioli, un instrument en acier utilisé pour produire du feu."
+    },
+    "origens": {
+      "pt": [
+        "Italiana"
+      ],
+      "en": [
+        "Italian"
+      ],
+      "fr": [
+        "Italie"
+      ]
+    }
+  },
+  {
+    "nome": "Acelino",
+    "significados": {
+      "pt": "O que concorda.",
+      "en": "Which you agree.",
+      "fr": "Ce que vous acceptez."
+    },
+    "origens": {
+      "pt": [
+        "Latina"
+      ],
+      "en": [
+        "Latino"
+      ],
+      "fr": [
+        "Latina"
+      ]
+    }
+  },
+  {
+    "nome": "Acelo",
+    "significados": {
+      "pt": "Filho de Hércules e mális.",
+      "en": "Son of Hercules and Malis.",
+      "fr": "Fils d'Hercule et de Malis."
+    },
+    "origens": {
+      "pt": [
+        "Mitológica"
+      ],
+      "en": [
+        "Mythology"
+      ],
+      "fr": [
+        "Mythologique"
+      ]
+    }
+  },
+  {
+    "nome": "Achille",
+    "significados": {
+      "pt": "Forma francesa e italiana de Aquiles.",
+      "en": "French and Italian form of Achilles.",
+      "fr": "Forme française et italienne d'Achille."
+    },
+    "origens": {
+      "pt": [
+        "Francesa"
+      ],
+      "en": [
+        "French"
+      ],
+      "fr": [
+        "Française"
+      ]
+    }
+  },
+  {
+    "nome": "Achilles",
+    "significados": {
+      "pt": "Significa “dor do povo”, “luto do povo”, “aflição da nação”.",
+      "en": "It means “pain of the people”, “mourning of the people”, “affliction of the nation”.",
+      "fr": "Cela signifie « douleur du peuple », « deuil du peuple », « affliction de la nation »."
+    },
+    "origens": {
+      "pt": [
+        "Grega"
+      ],
+      "en": [
+        "Greece"
+      ],
+      "fr": [
+        "Grèce"
+      ]
+    }
+  },
+  {
+    "nome": "Acilino",
+    "significados": {
+      "pt": "Fruto do carvalho.",
+      "en": "Fruit of the oak.",
+      "fr": "Fruit du chêne."
+    },
+    "origens": {
+      "pt": [
+        "Latina"
+      ],
+      "en": [
+        "Latino"
+      ],
+      "fr": [
+        "Latina"
+      ]
+    }
+  },
+  {
+    "nome": "Acineto",
+    "significados": {
+      "pt": "Filho de Hércules.",
+      "en": "Son of Hercules.",
+      "fr": "Fils d'Hercule."
+    },
+    "origens": {
+      "pt": [
+        "Mitológica"
+      ],
+      "en": [
+        "Mythology"
+      ],
+      "fr": [
+        "Mythologique"
+      ]
+    }
+  },
+  {
+    "nome": "Acir",
+    "significados": {
+      "pt": "Significa \"dolorido, magoado\", \"o que vem da dor\" ou \"o que faz doer, o que magoa\".",
+      "en": "It means “sore, hurt,” “what comes from pain,” or “what makes it hurt, what hurts.”",
+      "fr": "Cela signifie « endolori, blessé », « ce qui vient de la douleur » ou « ce qui fait mal, ce qui fait mal »."
+    },
+    "origens": {
+      "pt": [
+        "Tupi",
+        "Indígena"
+      ],
+      "en": [
+        "Tupi",
+        "Indigenous"
+      ],
+      "fr": [
+        "Tupi",
+        "Peuple autochtone"
+      ]
+    }
+  },
+  {
+    "nome": "Acis",
+    "significados": {
+      "pt": "Filho de Fauno simíetis.",
+      "en": "Son of Fauno simíetis.",
+      "fr": "Fils de Fauno simíetis."
+    },
+    "origens": {
+      "pt": [
+        "Latina"
+      ],
+      "en": [
+        "Latino"
+      ],
+      "fr": [
+        "Latina"
+      ]
+    }
+  },
+  {
+    "nome": "Acrísio",
+    "significados": {
+      "pt": "Rei de Argos, na grécia.",
+      "en": "King of Argos, Greece.",
+      "fr": "Roi d'Argos, Grèce."
+    },
+    "origens": {
+      "pt": [
+        "Mitológica"
+      ],
+      "en": [
+        "Mythology"
+      ],
+      "fr": [
+        "Mythologique"
+      ]
+    }
+  },
+  {
+    "nome": "Acácio",
+    "significados": {
+      "pt": "Significa “inocente”, “sem maldade”, “que não tem malícia”.",
+      "en": "It means “innocent”, “without malice”, “who has no malice”.",
+      "fr": "Cela signifie « innocent », « sans malice », « qui n'a pas de malice »."
+    },
+    "origens": {
+      "pt": [
+        "Grega"
+      ],
+      "en": [
+        "Greece"
+      ],
+      "fr": [
+        "Grèce"
+      ]
+    }
+  },
+  {
+    "nome": "Acúrcio",
+    "significados": {
+      "pt": "Santo mártir grego.",
+      "en": "Greek martyr saint.",
+      "fr": "Saint martyr grec."
+    },
+    "origens": {
+      "pt": [
+        "Grega"
+      ],
+      "en": [
+        "Greece"
+      ],
+      "fr": [
+        "Grèce"
+      ]
+    }
+  },
+  {
+    "nome": "Acúrsio",
+    "significados": {
+      "pt": "Santo mártir.",
+      "en": "Holy martyr.",
+      "fr": "Saint martyr."
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Adah",
+    "significados": {
+      "pt": "Adorno, enfeite.",
+      "en": "Adornment",
+      "fr": "Parure"
+    },
+    "origens": {
+      "pt": [
+        "Hebraica"
+      ],
+      "en": [
+        "Hebrew"
+      ],
+      "fr": [
+        "Hébreu"
+      ]
+    }
+  },
+  {
+    "nome": "Adailton",
+    "significados": {
+      "pt": "Significa “o que foi acrescentado”.",
+      "en": "It means “what has been added.”",
+      "fr": "Cela signifie « ce qui a été ajouté »."
+    },
+    "origens": {
+      "pt": [
+        "Latina",
+        "Inglesa"
+      ],
+      "en": [
+        "Latino",
+        "English"
+      ],
+      "fr": [
+        "Latina",
+        "Anglaise"
+      ]
+    }
+  }
+]
