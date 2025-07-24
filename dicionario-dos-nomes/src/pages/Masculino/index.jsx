@@ -53,29 +53,36 @@ function MasculinoScreen() {
   );
 
   const showInfo = useCallback((item) => {
+    const lang = i18n.language || 'pt';
     Alert.alert(
       item.nome,
-      `📖 ${t('Significado')}: ${item.significado}\n🌍 ${t('Origem')}: ${item.origens.join(', ')}`,
+      `📖 ${t('Significado')}: ${item.significados[lang]}\n🌍 ${t('Origem')}: ${item.origens[lang].join(', ')}`,
       [{ text: 'OK', style: 'cancel' }]
     );
-  }, [t]);
+  }, [t, i18n.language]);
 
-  const renderCard = ({ item }) => (
-    <Animated.View style={{ opacity: fadeAnim }}>
-      <Card containerStyle={styles.cardStyle}>
-        <Text style={styles.cardTitle}>{item.nome}</Text>
-        <Card.Divider />
-        <Text style={styles.text}>{t('Significado')}: {item.significado}</Text>
-        <Text style={styles.text}>{t('Origem')}: {item.origens.join(', ')}</Text>
-      </Card>
-    </Animated.View>
-  );
 
-  const renderListItem = ({ item }) => (
-    <TouchableOpacity style={styles.listItem} onPress={() => showInfo(item)}>
+  const renderCard = ({ item, index }) => {
+    const lang = i18n.language || 'pt';
+    return (
+      <Animated.View key={`${item.nome}-${index}`} style={{ opacity: fadeAnim }}>
+        <Card containerStyle={styles.cardStyle}>
+          <Text style={styles.cardTitle}>{item.nome}</Text>
+          <Card.Divider />
+          <Text style={styles.text}>{t('Significado')}: {item.significados[lang]}</Text>
+          <Text style={styles.text}>{t('Origem')}: {item.origens[lang].join(', ')}</Text>
+        </Card>
+      </Animated.View>
+    );
+  };
+
+
+  const renderListItem = ({ item, index }) => (
+    <TouchableOpacity key={`${item.nome}-${index}`} style={styles.listItem} onPress={() => showInfo(item)}>
       <Text style={styles.listItemText}>{item.nome}</Text>
     </TouchableOpacity>
   );
+
 
   const renderLetter = ({ item }) => (
     <TouchableOpacity onPress={() => scrollToCard(item)}>

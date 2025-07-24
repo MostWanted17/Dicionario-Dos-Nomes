@@ -10,7 +10,7 @@ from fake_useragent import UserAgent
 IDIOMAS = {'en': 'English', 'fr': 'French'}
 PAUSA = 5  # seconds between requests to avoid rate limiting
 MAX_RETRIES = 3
-ARQUIVO_INPUT = "../../dicionario-dos-nomes/src/database/nomes_masculinos_todas_paginas_ordenados.json"
+ARQUIVO_INPUT = "../../dicionario-dos-nomes/src/database/nomes_femininos_todas_paginas_ordenados.json"
 ARQUIVO_SAIDA = "nomes_traduzidos.json"
 ARQUIVO_ERROS = "erros_traducao.log"
 CACHE_FILE = "traducoes_cache.json"
