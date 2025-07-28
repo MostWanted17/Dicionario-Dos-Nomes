@@ -1,6 +1,6 @@
 import React, { useState, useRef, useMemo, useEffect, useCallback } from 'react';
 import {
-  Text, View, SafeAreaView, TouchableOpacity, Animated, Switch, Alert, ActivityIndicator,
+  Text, TextInput, View, SafeAreaView, TouchableOpacity, Animated, Switch, Alert, ActivityIndicator,
 } from 'react-native';
 import { Card, SearchBar } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -82,7 +82,7 @@ const NomeListScreen = ({ data }) => {
   );
 
   const renderLetter = ({ item }) => (
-    <TouchableOpacity onPress={() => scrollToCard(item)}>
+    <TouchableOpacity key={item} onPress={() => scrollToCard(item)}>
       <Text style={styles.letter}>{item}</Text>
     </TouchableOpacity>
   );
@@ -124,17 +124,23 @@ const NomeListScreen = ({ data }) => {
         <Text style={styles.toggleText}>{t('ModoCard')}</Text>
       </View>
 
-      <SearchBar
-        placeholder={t('Buscar')}
-        placeholderTextColor="#ddd"
-        onChangeText={setSearch}
-        value={search}
-        containerStyle={[styles.searchBar, { borderTopWidth: 0, marginTop: 5 }]}
-        inputContainerStyle={styles.inputContainer}
-        inputStyle={styles.inputStyle}
-        lightTheme
-        autoCapitalize="none"
-      />
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder={t('Buscar')}
+          placeholderTextColor="#ddd"
+          onChangeText={setSearch}
+          value={search}
+          style={styles.inputStyle}
+          autoCapitalize="none"
+        />
+        {search.length > 0 ? (
+          <TouchableOpacity onPress={() => setSearch('')} style={styles.clearButton}>
+            <MaterialIcons name="clear" size={20} color="#ddd" />
+          </TouchableOpacity>
+        ) : (
+          <MaterialIcons name="search" size={20} color="#ddd" style={styles.searchIcon} />
+        )}
+      </View>
 
       {filteredData.length === 0 ? (
         <Text style={{ color: '#fff', textAlign: 'center', marginTop: 20 }}>
@@ -149,18 +155,21 @@ const NomeListScreen = ({ data }) => {
           estimatedItemSize={viewMode === 'card' ? 150 : 62}
           onScroll={(e) => setScrollY(e.nativeEvent.contentOffset.y)}
           onScrollToIndexFailed={onScrollToIndexFailed}
+          extraData={viewMode} // 👈 força atualização quando muda o modo
         />
+
       )}
 
-      <FlashList
-        data={alphabet}
-        renderItem={renderLetter}
-        keyExtractor={(item) => item}
-        estimatedItemSize={20}
-        style={styles.alphabetList}
-        contentContainerStyle={styles.alphabetContainer}
-        scrollEnabled={false}
-      />
+      <View style={styles.alphabetList}>
+        <FlashList
+          data={alphabet}
+          renderItem={renderLetter}
+          keyExtractor={(item) => item}
+          scrollEnabled={false}
+          estimatedItemSize={20}
+        />
+      </View>
+
 
       {scrollY > 0 && (
         <TouchableOpacity
