@@ -20,6 +20,10 @@ export default function IdiomaScreen() {
       <TouchableOpacity style={styles.button} onPress={() => mudarIdioma('en')}>
         <Text style={styles.buttonText}>{t('Ingles')}</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => mudarIdioma('fr')}>
+        <Text style={styles.buttonText}>{t('Frances')}</Text>
+      </TouchableOpacity>
     </View>
   );
 }

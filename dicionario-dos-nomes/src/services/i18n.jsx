@@ -28,7 +28,8 @@ const resources = {
       NomesFemininos: 'Female Names:',
       NomesMasculinos: 'Male Names:',
       Versao: "Version:",
-      AppName: "Dictionary of Names"
+      AppName: "Dictionary of Names",
+      Frances: "French"
     }
   },
   pt: {
@@ -51,11 +52,40 @@ const resources = {
       FaçaumPedidodeNome: 'Faça um Pedido de Nome',
       Digiteonomedesejado: 'Digite o nome desejado',
       EnviarPedido: 'Enviar Pedido',
-      Esteaplicativopermiteabuscadenomeseseussignificados:'Este aplicativo permite a busca de nomes e seus significados.',
+      Esteaplicativopermiteabuscadenomeseseussignificados: 'Este aplicativo permite a busca de nomes e seus significados.',
       NomesFemininos: 'Nomes Femininos:',
       NomesMasculinos: 'Nomes Masculinos:',
       Versao: 'Versão:',
-      AppName: "Dicionario dos Nomes"
+      AppName: "Dicionario dos Nomes",
+      Frances: "Francês"
+    },
+    fr: {
+      translation: {
+        Masculino: 'Masculin',
+        Feminino: 'Féminin',
+        Pedidos: 'Demandes',
+        Sobre: 'À propos',
+        Idioma: 'Langue',
+        EscolhaIdioma: 'Choisissez la langue',
+        Portugues: 'Portugais',
+        Ingles: 'Anglais',
+        Significado: 'Signification',
+        Origem: 'Origine',
+        ModoLista: 'Mode Liste',
+        ModoCard: 'Mode Carte',
+        Buscar: 'Rechercher',
+        NenhumNomeEncontrado: 'Aucun nom trouvé',
+        PedidodeNomes: 'Demande de Noms',
+        FaçaumPedidodeNome: 'Faites une demande de nom',
+        Digiteonomedesejado: 'Entrez le nom souhaité',
+        EnviarPedido: 'Envoyer la demande',
+        Esteaplicativopermiteabuscadenomeseseussignificados: 'Cette application permet de rechercher des noms et leurs significations.',
+        NomesFemininos: 'Noms Féminins :',
+        NomesMasculinos: 'Noms Masculins :',
+        Versao: 'Version :',
+        AppName: "Dictionnaire des Noms",
+        Frances: "Français"
+      }
     }
   }
 };
