@@ -2,7 +2,7 @@ import React, { useState, useRef, useMemo, useEffect, useCallback } from 'react'
 import {
   Text, TextInput, View, SafeAreaView, TouchableOpacity, Animated, Switch, Alert, ActivityIndicator,
 } from 'react-native';
-import { Card, SearchBar } from 'react-native-elements';
+import { Card } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { FlashList } from '@shopify/flash-list';
@@ -29,15 +29,9 @@ const NomeListScreen = ({ data }) => {
   const filteredData = useMemo(() => {
     const searchLower = search.trim().toLowerCase();
     return searchLower
-      ? data.filter(({ nome }) => nome.toLowerCase().includes(searchLower))
+      ? data.filter(({ nome }) => nome?.toLowerCase().includes(searchLower))
       : data;
-  }, [search]);
-
-  useEffect(() => {
-    if (filteredData.length && flatListRef.current) {
-      flatListRef.current.scrollToIndex({ index: 0, animated: true, viewPosition: 0 });
-    }
-  }, [filteredData]);
+  }, [search, data]);
 
   useEffect(() => {
     Animated.timing(fadeAnim, {
@@ -45,7 +39,7 @@ const NomeListScreen = ({ data }) => {
       duration: 500,
       useNativeDriver: true,
     }).start();
-  }, [filteredData]);
+  }, []); // Só uma vez no início
 
   const alphabet = useMemo(
     () => Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)),
@@ -55,8 +49,8 @@ const NomeListScreen = ({ data }) => {
   const showInfo = useCallback((item) => {
     const lang = i18n.language || 'pt';
     Alert.alert(
-      item.nome,
-      `📖 ${t('Significado')}: ${item.significados[lang]}\n🌍 ${t('Origem')}: ${item.origens[lang].join(', ')}`,
+      item.nome ?? 'Sem nome',
+      `📖 ${t('Significado')}: ${item.significados?.[lang] ?? t('NaoDisponivel')}\n🌍 ${t('Origem')}: ${item.origens?.[lang]?.join(', ') ?? t('NaoDisponivel')}`,
       [{ text: 'OK', style: 'cancel' }]
     );
   }, [t, i18n.language]);
@@ -64,19 +58,27 @@ const NomeListScreen = ({ data }) => {
   const renderCard = ({ item, index }) => {
     const lang = i18n.language || 'pt';
     return (
-      <Animated.View key={`${item.nome}-${index}`} style={{ opacity: fadeAnim }}>
+      <Animated.View key={`${item?.nome ?? 'sem-nome'}-${index}`} style={{ opacity: fadeAnim }}>
         <Card containerStyle={styles.cardStyle}>
           <Text style={styles.cardTitle}>{item.nome}</Text>
           <Card.Divider />
-          <Text style={styles.text}>{t('Significado')}: {item.significados[lang]}</Text>
-          <Text style={styles.text}>{t('Origem')}: {item.origens[lang].join(', ')}</Text>
+          <Text style={styles.text}>
+            {t('Significado')}: {item.significados?.[lang] ?? t('NaoDisponivel')}
+          </Text>
+          <Text style={styles.text}>
+            {t('Origem')}: {item.origens?.[lang]?.join(', ') ?? t('NaoDisponivel')}
+          </Text>
         </Card>
       </Animated.View>
     );
   };
 
   const renderListItem = ({ item, index }) => (
-    <TouchableOpacity key={`${item.nome}-${index}`} style={styles.listItem} onPress={() => showInfo(item)}>
+    <TouchableOpacity
+      key={`${item?.nome ?? 'sem-nome'}-${index}`}
+      style={styles.listItem}
+      onPress={() => showInfo(item)}
+    >
       <Text style={styles.listItemText}>{item.nome}</Text>
     </TouchableOpacity>
   );
@@ -89,10 +91,14 @@ const NomeListScreen = ({ data }) => {
 
   const scrollToCard = (letter) => {
     const index = filteredData.findIndex(({ nome }) =>
-      nome.trim().toUpperCase().startsWith(letter)
+      nome?.trim().toUpperCase().startsWith(letter)
     );
     if (index !== -1 && flatListRef.current) {
-      flatListRef.current.scrollToIndex({ index, animated: true, viewPosition: 0 });
+      try {
+        flatListRef.current.scrollToIndex({ index, animated: true, viewPosition: 0 });
+      } catch {
+        flatListRef.current.scrollToOffset({ offset: 0, animated: true });
+      }
     }
   };
 
@@ -151,13 +157,12 @@ const NomeListScreen = ({ data }) => {
           ref={flatListRef}
           data={filteredData}
           renderItem={viewMode === 'card' ? renderCard : renderListItem}
-          keyExtractor={(item, index) => `${item.nome}-${index}`}
+          keyExtractor={(item, index) => `${item?.nome ?? 'sem-nome'}-${index}`}
           estimatedItemSize={viewMode === 'card' ? 150 : 62}
           onScroll={(e) => setScrollY(e.nativeEvent.contentOffset.y)}
           onScrollToIndexFailed={onScrollToIndexFailed}
-          extraData={viewMode} // 👈 força atualização quando muda o modo
+          extraData={{ viewMode, filteredData }}
         />
-
       )}
 
       <View style={styles.alphabetList}>
@@ -169,7 +174,6 @@ const NomeListScreen = ({ data }) => {
           estimatedItemSize={20}
         />
       </View>
-
 
       {scrollY > 0 && (
         <TouchableOpacity
