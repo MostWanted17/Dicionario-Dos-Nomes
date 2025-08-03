@@ -54,8 +54,8 @@ function MainAppContent() {
           tabBarInactiveTintColor: '#ccc',
           tabBarStyle: {
             backgroundColor: '#2C1E5C',
-            paddingBottom: insets.bottom > 0 ? insets.bottom - 10 : 0,
-            height: 50 + (insets.bottom > 0 ? insets.bottom - 10 : 0),
+            paddingBottom: Math.max(0, (insets?.bottom || 0) - 10),
+            height: 50 + Math.max(0, (insets?.bottom || 0) - 10),
           },
         })}
       >

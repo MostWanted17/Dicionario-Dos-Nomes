@@ -6,10 +6,13 @@ import { Card } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { FlashList } from '@shopify/flash-list';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import styles from './style';
 
 const NomeListScreen = ({ data }) => {
   const { t, i18n } = useTranslation();
+  const insets = useSafeAreaInsets();
   const [search, setSearch] = useState('');
   const [viewMode, setViewMode] = useState('card');
   const [scrollY, setScrollY] = useState(0);
@@ -119,7 +122,7 @@ const NomeListScreen = ({ data }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.toggleContainer}>
+      <View style={[styles.toggleContainer, { paddingTop: insets.top || 10 }]}>
         <Text style={styles.toggleText}>{t('ModoLista')}</Text>
         <Switch
           value={viewMode === 'card'}
@@ -165,7 +168,7 @@ const NomeListScreen = ({ data }) => {
         />
       )}
 
-      <View style={styles.alphabetList}>
+      <View style={[styles.alphabetList, { top: insets.top + 100 }]}>
         <FlashList
           data={alphabet}
           renderItem={renderLetter}
