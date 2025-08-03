@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, StatusBar, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, Text, StatusBar, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { AppOpenAd, TestIds, AdEventType } from 'react-native-google-mobile-ads';
-import i18n from './src/services/i18n'; // Importe a instância do i18nr
-import { useTranslation } from 'react-i18next'; // Adicione esta linha
-
+import i18n from './src/services/i18n';
+import { useTranslation } from 'react-i18next';
 
 // Telas
 import AboutScreen from './src/pages/Sobre/index.jsx';
@@ -15,19 +14,23 @@ import FemininoScreen from './src/pages/Feminino/index.jsx';
 import PedidosScreen from './src/pages/Pedidos/index.jsx';
 import IdiomaScreen from './src/pages/Idioma/index.jsx';
 
+// Serviço de anúncios
+import { setupAppOpenAd } from './src/services/ads';
+
 const Tab = createBottomTabNavigator();
-const adUnitId = __DEV__ ? TestIds.APP_OPEN : 'ca-app-pub-5781907132925477/9911463270';
 
 const getFlagEmoji = (lang) => {
   switch (lang) {
     case 'pt': return '🇧🇷';
     case 'en': return '🇺🇸';
+    case 'fr': return '🇫🇷';
     default: return '🌐';
   }
 };
 
-function MainApp() {
-  const { t, i18n } = useTranslation(); // Use o hook aqui
+function MainAppContent() {
+  const { t, i18n } = useTranslation();
+  const insets = useSafeAreaInsets();
 
   return (
     <NavigationContainer key={i18n.language}>
@@ -49,7 +52,11 @@ function MainApp() {
           },
           tabBarActiveTintColor: '#F5A9F7',
           tabBarInactiveTintColor: '#ccc',
-          tabBarStyle: { backgroundColor: '#2C1E5C' },
+          tabBarStyle: {
+            backgroundColor: '#2C1E5C',
+            paddingBottom: insets.bottom > 0 ? insets.bottom - 10 : 0,
+            height: 50 + (insets.bottom > 0 ? insets.bottom - 10 : 0),
+          },
         })}
       >
         <Tab.Screen name="Masculino" component={MasculinoScreen} options={{ title: t('Masculino') }} />
@@ -62,43 +69,37 @@ function MainApp() {
   );
 }
 
-export default function App() {
+function App() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
+    // Configuração para Edge-to-Edge
+    if (Platform.OS === 'android') {
+      StatusBar.setBackgroundColor('transparent');
+      StatusBar.setTranslucent(true);
+    }
+
     if (i18n.isInitialized) {
       setIsReady(true);
     } else {
       i18n.on('initialized', () => setIsReady(true));
     }
 
-    const appOpenAd = AppOpenAd.createForAdRequest(adUnitId, {
-      requestNonPersonalizedAdsOnly: true,
-    });
-
-    appOpenAd.load();
-
-    appOpenAd.addAdEventListener(AdEventType.LOADED, () => {
-      try {
-        appOpenAd.show();
-      } catch (e) {
-        console.log('Erro ao mostrar anúncio:', e);
-      }
-    });
-
-    appOpenAd.addAdEventListener(AdEventType.ERROR, (e) => {
-      console.log('Erro ao carregar anúncio:', e);
-    });
-
+    const removeAdListeners = setupAppOpenAd();
     return () => {
-      appOpenAd.removeAllListeners();
+      removeAdListeners();
     };
   }, []);
 
   if (!isReady) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C1E5C' }}>
-        <StatusBar backgroundColor="#2C1E5C" barStyle="light-content" />
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#2C1E5C'
+      }}>
+        <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
         <ActivityIndicator size="large" color="#F5A9F7" />
         <Text style={{ color: '#fff', marginTop: 10 }}>Carregando idioma...</Text>
       </View>
@@ -107,8 +108,16 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#2C1E5C' }}>
-      <StatusBar backgroundColor="#2C1E5C" barStyle="light-content" />
-      <MainApp />
+      <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
+      <MainAppContent />
     </View>
+  );
+}
+
+export default function AppWrapper() {
+  return (
+    <SafeAreaProvider>
+      <App />
+    </SafeAreaProvider>
   );
 }

@@ -5966,6 +5966,25 @@
     }
   },
   {
+    "nome": "Anaya",
+    "significados": {
+      "pt": "Significa \"olhos voltados para o amanhã\" ou \"aquele que olha para o futuro\". É um nome que reflete esperança, visão e otimismo em relação ao futuro.",
+      "en": "It means \"eyes turned to tomorrow\" or \"one who looks to the future.\" It is a name that reflects hope, vision, and optimism about the future.",
+      "fr": "Cela signifie « les yeux tournés vers demain » ou « celui qui regarde vers l'avenir ». C'est un nom qui reflète l'espoir, la vision et l'optimisme face à l'avenir."
+    },
+    "origens": {
+      "pt": [
+        "Africana"
+      ],
+      "en": [
+        "African"
+      ],
+      "fr": [
+        "Africain"
+      ]
+    }
+  },
+  {
     "nome": "Andina",
     "significados": {
       "pt": "Aquela que muito anda.",
@@ -36992,7 +37011,7 @@
     }
   },
   {
-    "nome": "kathleen",
+    "nome": "Kathleen",
     "significados": {
       "pt": "Significa “casta”, “pura”.",
       "en": "It means \"caste\", \"pure\".",
