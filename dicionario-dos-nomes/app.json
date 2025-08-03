@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Dicionario Dos Nomes",
+    "name": "Dicionário dos Nomes",
     "slug": "dicionario-dos-nomes",
     "version": "1.4.0",
     "orientation": "default",
@@ -12,26 +12,14 @@
       "supportsTablet": true
     },
     "android": {
-      "targetSdkVersion": 35,
-      "compileSdkVersion": 35,
-      "minSdkVersion": 21,
-      "navigationBar": {
-        "visible": "sticky-immersive",
-        "backgroundColor": "#00000000"
-      },
+      "edgeToEdgeEnabled": true,
       "softwareKeyboardLayoutMode": "pan",
-      "statusBar": {
-        "backgroundColor": "#00000000",
-        "translucent": true
-      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#2C1E5C"
       },
       "package": "com.davidmaranho.DicionarioDosNomes",
       "permissions": [
-        "INTERNET",
-        "com.google.android.gms.permission.AD_ID",
         "INTERNET",
         "com.google.android.gms.permission.AD_ID"
       ],
@@ -59,6 +47,15 @@
           "androidAppId": "ca-app-pub-5781907132925477~5189619634",
           "iosAppId": "ca-app-pub-5781907132925477~5189619634"
         }
+      ],
+      [
+        "react-native-edge-to-edge",
+        {
+          "android": {
+            "parentTheme": "Default",
+            "enforceNavigationBarContrast": false
+          }
+        }
       ]
     ],
     "experiments": {
@@ -77,6 +74,14 @@
     },
     "updates": {
       "url": "https://u.expo.dev/1ec27487-9163-4176-9196-40539bfd92d1"
+    },
+    "locales": {
+      "en": {
+        "app_name": "Dictionary of Names"
+      },
+      "fr": {
+        "app_name": "Dictionnaire des Noms"
+      }
     }
   }
 }
