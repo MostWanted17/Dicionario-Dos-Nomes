@@ -168,7 +168,7 @@ const NomeListScreen = ({ data }) => {
         />
       )}
 
-      <View style={[styles.alphabetList, { top: insets.top + 100 }]}>
+      <View style={[styles.alphabetList, { top: insets.top + 90 }]}>
         <FlashList
           data={alphabet}
           renderItem={renderLetter}

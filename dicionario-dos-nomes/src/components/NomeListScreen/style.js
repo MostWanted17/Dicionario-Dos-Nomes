@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   text: { marginBottom: 10, textAlign: 'center', color: '#FFFFFF' },
   cardTitle: { fontSize: 18, fontWeight: 'bold', color: '#FFFFFF', textAlign: 'center' },
   cardList: { flex: 1, width: '90%', alignSelf: 'center' },
-  alphabetList: { position: 'absolute', right: 0, bottom: 30, width: 30, paddingTop: 30, paddingBottom: 30 },
+  alphabetList: { position: 'absolute', right: 0, bottom: 0, width: 30, paddingTop: 30, paddingBottom: 30 },
   alphabetContainer: { alignItems: 'center', justifyContent: 'flex-start' },
   letter: { color: '#F5A9F7', fontSize: 16, marginVertical: 1.5, textAlign: 'center' },
   clearButton: {

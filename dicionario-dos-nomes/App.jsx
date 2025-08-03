@@ -73,10 +73,10 @@ function App() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    // Configuração para Edge-to-Edge
+    // Configuração simplificada para Edge-to-Edge
     if (Platform.OS === 'android') {
-      StatusBar.setBackgroundColor('transparent');
-      StatusBar.setTranslucent(true);
+      StatusBar.setBarStyle('light-content');
+      // Não configuramos mais setStatusBarColor ou setTranslucent diretamente
     }
 
     if (i18n.isInitialized) {
@@ -99,7 +99,7 @@ function App() {
         alignItems: 'center',
         backgroundColor: '#2C1E5C'
       }}>
-        <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
+        <StatusBar barStyle="light-content" />
         <ActivityIndicator size="large" color="#F5A9F7" />
         <Text style={{ color: '#fff', marginTop: 10 }}>Carregando idioma...</Text>
       </View>
@@ -108,7 +108,7 @@ function App() {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#2C1E5C' }}>
-      <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
+      <StatusBar barStyle="light-content" />
       <MainAppContent />
     </View>
   );
