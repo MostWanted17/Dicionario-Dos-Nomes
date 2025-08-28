@@ -5,11 +5,13 @@
     "version": "1.5.0",
     "orientation": "default",
     "icon": "./assets/images/adaptive-icon.png",
-    "scheme": "myapp",
+    "scheme": "dicionario",
+    "deeplinks": ["/name/:value"],
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.davidmaranho.DicionarioDosNomes"
     },
     "android": {
       "edgeToEdgeEnabled": true,
